@@ -51,6 +51,18 @@ def run(filename: str, n: int = 5) -> None:  # Default n to 5
     averages = window_average(clean_data, n)  
     stdevs = window_stddev(clean_data, n)  
 
+    # Plot and save maximums
+    plt.plot(maximums)
+    plt.savefig('images/maximums.png')
+
+    # Plot and save averages
+    plt.plot(averages)
+    plt.savefig('images/averages.png')
+
+    # Plot and save standard deviations
+    plt.plot(stdevs)
+    plt.savefig('images/stdevs.png')
+    
     # Return all 3 lists
     return maximums, averages, stdevs
 
